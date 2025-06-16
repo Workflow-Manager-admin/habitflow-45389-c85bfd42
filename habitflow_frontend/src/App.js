@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
+import AddHabitCard from './AddHabitCard';
+import HabitList from './HabitList';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -9,13 +11,10 @@ function App() {
       <Navbar />
       <main>
         <div className="container">
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            <h1 className="title">habitflow_frontend</h1>
-            <div className="description">
-              Start building your application.
-            </div>
-            <button className="btn btn-large">Button</button>
+          <div style={{ paddingTop: 64, marginBottom: 20 }}>
+            <AddHabitCard />
+            {/* Below the add-habit, render the responsive habit list */}
+            <HabitList />
           </div>
         </div>
       </main>

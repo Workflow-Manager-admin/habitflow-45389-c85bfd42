@@ -24,4 +24,23 @@ modules by path ./.ve/ 15.1 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1271 ms
+webpack 5.99.9 compiled successfully in 1298 ms
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.49 MiB
+  asset bundle.js 1.45 MiB [emitted] (name: main)
+  asset main.b056e179099e031c7c5b.hot-update.js 42.9 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.b056e179099e031c7c5b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.45 MiB main.b056e179099e031c7c5b.hot-update.js 42.9 KiB
+cached modules 1.28 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 21.5 KiB
+  modules by path ./src/*.css 9.8 KiB
+    ./src/AddHabitCard.css 2.25 KiB [built] [code generated]
+    ./src/HabitList.css 2.24 KiB [built] [code generated]
+    ./node_modules/css-loader/dist/cjs.js!./src/AddHabitCard.css 2.15 KiB [built] [code generated]
+    ./node_modules/css-loader/dist/cjs.js!./src/HabitList.css 3.16 KiB [built] [code generated]
+  modules by path ./src/*.js 11.7 KiB
+    ./src/App.js 1.07 KiB [built] [code generated]
+    ./src/AddHabitCard.js 3.96 KiB [built] [code generated]
+    ./src/HabitList.js 6.71 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 217 ms
