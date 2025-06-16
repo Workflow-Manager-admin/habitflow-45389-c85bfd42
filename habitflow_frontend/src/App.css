@@ -1,27 +1,44 @@
 :root {
-  --base-light: #00ffff;
-  --base-dark: #00008b;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --navbar-bg: #f8f9fa;
-  --navbar-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
-  --navbar-border: #e3e5e7;
-  --navbar-profile-bg: #edf0f9;
-  --navbar-profile-border: #d3dae3;
+  /* Pastel palette */
+  --main-bg: #f2f6f9;
+  --surface: #ffffff;
+  --pastel-blue: #a3d5ff;
+  --pastel-accent: #e4ecf7;
+  --pastel-green: #a8d5ba;
+  --pastel-pink: #f4c2c2;
+  --pastel-secondary: #f7e9e4;
+  --text-color: #273043;
+  --text-secondary: #577588;
+  --border-color: #e4ecf7;
+  --primary: #a3d5ff;
+  --accent: #f4c2c2;
+  
+  /* Layout vars */
+  --radius: 16px;
+  --shadow: 0 2px 16px 0 rgba(163,213,255,0.10), 0 6px 24px 0 rgba(220,180,245,0.07);
+  --shadow-soft: 0 4px 20px 0 rgba(163,213,255,0.12), 0 10px 32px 0 rgba(244,194,194,0.08);
+  --main-spacing: 20px;
+
+  /* Navbar overrides */
+  --navbar-bg: #ffffff;
+  --navbar-shadow: 0 2px 8px 0 rgba(163,213,255,0.10);
+  --navbar-border: #e4ecf7;
+  --navbar-profile-bg: #e4ecf7;
+  --navbar-profile-border: #a3d5ff;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600|Inter:400,500,700&display=swap');
 
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -32,25 +49,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -62,25 +81,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 body {
@@ -95,14 +116,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -113,25 +133,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -143,25 +165,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .app {
@@ -173,14 +197,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -191,25 +214,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -221,25 +246,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .navbar {
@@ -259,14 +286,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -277,25 +303,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -307,25 +335,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .logo {
@@ -339,14 +369,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -357,25 +386,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -387,25 +418,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .logo-symbol {
@@ -415,14 +448,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -433,25 +465,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -463,25 +497,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .container {
@@ -495,14 +531,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -513,25 +548,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -543,25 +580,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .hero {
@@ -577,14 +616,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -595,25 +633,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -625,25 +665,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .subtitle {
@@ -655,14 +697,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -673,25 +714,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -703,25 +746,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .title {
@@ -734,14 +779,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -752,25 +796,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -782,25 +828,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .description {
@@ -814,14 +862,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -832,25 +879,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -862,25 +911,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .btn {
@@ -898,14 +949,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -916,25 +966,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -946,25 +998,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .btn:hover {
@@ -974,14 +1028,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -992,25 +1045,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -1022,25 +1077,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }
 
 .btn-large {
@@ -1051,14 +1108,13 @@ body {
 /* --- StreakFlow Navbar (minimalist, pastel/light, airy) --- */
 .streakflow-navbar {
   width: 100%;
-  background-color: var(--navbar-bg);
-  box-shadow: var(--navbar-shadow);
-  border-bottom: 1px solid var(--navbar-border);
+  background-color: var(--navbar-bg, #fff);
+  box-shadow: var(--navbar-shadow, 0 2px 8px 0 #a3d5ff10);
+  border-bottom: 1.5px solid var(--navbar-border, #e4ecf7);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
-  /* Minimal height, airy top/bottom padding */
   padding: 0;
 }
 
@@ -1069,25 +1125,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 0 32px; /* even, soft spacing */
+  font-size: 1.25rem;
+  padding: 0 var(--main-spacing, 20px);
   box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 
 .streakflow-appname {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #222c38;
-  letter-spacing: -0.5px;
+  gap: 10px;
+  color: #6da4ce;
+  letter-spacing: -0.2px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.23rem;
   user-select: none;
+  font-family: inherit;
 }
 
 .streakflow-appicon {
-  margin-right: 2px;
-  font-size: 23px;
+  margin-right: 3px;
+  font-size: 20px;
 }
 
 .streakflow-profile {
@@ -1099,23 +1157,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navbar-profile-bg);
-  border: 1.5px solid var(--navbar-profile-border);
+  background: var(--navbar-profile-bg, #e4ecf7);
+  border: 1.3px solid var(--navbar-profile-border, #a3d5ff);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 18px;
-  color: #4a5280;
-  box-shadow: 0 1px 5px 0 rgba(180,195,230,0.09);
-  margin-left: 10px;
-  transition: box-shadow 0.15s;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+  color: #82a7de;
+  box-shadow: 0 1px 6px 0 #a3d5ff1a;
+  margin-left: 13px;
+  transition: box-shadow 0.15s, background 0.16s;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .streakflow-profile-icon:hover {
-  box-shadow: 0 3px 15px 0 rgba(120,160,240,0.18);
+  background: #d6f0fb;
+  box-shadow: 0 3px 15px 0 #a3d5ff42;
 }
 
 body {
-  padding-top: 62px; /* For navbar overlay (fixed) */
+  padding-top: 62px;
 }

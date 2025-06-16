@@ -28,9 +28,9 @@ function AddHabitCard({ onAddHabit }) {
 
   return (
     <div className="add-habit-card-outer">
-      <div className="add-habit-card">
-        <h2 className="add-habit-title">Add New Habit</h2>
-        <form className="add-habit-form" onSubmit={handleSubmit}>
+      <div className="add-habit-card fade-in">
+        <h2 className="add-habit-title" style={{fontFamily: "'Poppins','Inter',Arial,sans-serif"}}>Add New Habit</h2>
+        <form className="add-habit-form" onSubmit={handleSubmit} style={{fontFamily: "'Poppins','Inter',Arial,sans-serif"}}>
           <label className="add-habit-label" htmlFor="habit-name">
             Habit Name
           </label>
@@ -73,13 +73,6 @@ function AddHabitCard({ onAddHabit }) {
 
           <button
             className="btn btn-large add-habit-btn"
-            style={{
-              backgroundColor: "#F4C2C2",
-              color: "#222c38",
-              marginTop: "20px",
-              fontWeight: 600,
-              fontFamily: "inherit",
-            }}
             type="submit"
           >
             Add Habit

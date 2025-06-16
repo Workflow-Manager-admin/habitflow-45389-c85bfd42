@@ -8,7 +8,7 @@ import React from "react";
 function Navbar() {
   return (
     <nav className="streakflow-navbar">
-      <div className="streakflow-navbar-content">
+      <div className="streakflow-navbar-content" style={{fontFamily: "'Poppins','Inter',Arial,sans-serif"}}>
         <div className="streakflow-appname">
           <span role="img" aria-label="growth chart" className="streakflow-appicon">
             📈

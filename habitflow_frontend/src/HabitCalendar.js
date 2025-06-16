@@ -116,8 +116,8 @@ function HabitCalendar({
   const todayStr = dateToStr(new Date());
 
   return (
-    <div className="habit-calendar-outer">
-      <h3 className="habit-calendar-title">
+    <div className="habit-calendar-outer fade-in">
+      <h3 className="habit-calendar-title" style={{fontFamily: "'Poppins','Inter',Arial,sans-serif"}}>
         {monthNames[month]} {year} <span role="img" aria-label="calendar">📅</span>
       </h3>
       <div className="habit-calendar">
@@ -161,7 +161,7 @@ function HabitCalendar({
           </div>
         ))}
       </div>
-      <div className="habit-calendar-legend">
+      <div className="habit-calendar-legend" style={{fontFamily: "'Poppins','Inter',Arial,sans-serif"}}>
         <span className="legend-item"><span className="legend-swatch swatch-good"></span> Streak/Completed</span>
         <span className="legend-item"><span className="legend-swatch swatch-missed"></span> Missed</span>
         <span className="legend-item cell-check">✔️</span> Done
