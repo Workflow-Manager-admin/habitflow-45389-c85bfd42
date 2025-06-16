@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./HabitList.css";
+import HabitCalendar from "./HabitCalendar";
 
 /**
  * PUBLIC_INTERFACE
@@ -141,7 +142,41 @@ function HabitList({ habits: propsHabits, onToggleDone, onDelete, onEdit }) {
         </div>
       ))}
     </div>
+    {/* Calendar below habit list: for demo, pass completedDates for this month */}
+    <HabitCalendar
+      completedDates={getSampleCompletedDates()}
+    />
   );
+}
+
+// PUBLIC_INTERFACE
+function getSampleCompletedDates() {
+  // Demo: completed every Mon/Wed/Fri + yesterday/today
+  let dates = [];
+  let now = new Date();
+  let year = now.getFullYear();
+  let month = now.getMonth();
+  let daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    let dt = new Date(year, month, d);
+    let wd = dt.getDay();
+    if (wd === 1 || wd === 3 || wd === 5) {
+      // Mon/Wed/Fri
+      dates.push(dt.toISOString().slice(0, 10));
+    }
+  }
+  // Add yesterday & today
+  for (let offset = 0; offset <= 1; offset++) {
+    let dt = new Date();
+    dt.setDate(dt.getDate() - offset);
+    if (dt.getMonth() === month) {
+      let ds = dt.toISOString().slice(0, 10);
+      if (!dates.includes(ds)) dates.push(ds);
+    }
+  }
+
+  return dates;
 }
 
 export default HabitList;

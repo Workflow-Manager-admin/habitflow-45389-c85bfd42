@@ -1,0 +1,162 @@
+.habit-calendar-outer {
+  max-width: 410px;
+  margin: 38px auto 0 auto;
+  background: #f7e9e4;
+  border-radius: 22px;
+  box-shadow: 0 3px 22px 0 rgba(145,190,180,0.07), 0 4.5px 16px 0 rgba(244,194,194,0.09);
+  padding: 28px 20px 21px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.3px solid #fff0f5;
+}
+
+.habit-calendar-title {
+  color: #845ec2;
+  text-align: center;
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin-bottom: 17px;
+  letter-spacing: 0.04em;
+}
+
+.habit-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.habit-calendar-row {
+  display: flex;
+  width: 100%;
+}
+
+.habit-calendar-daynames {
+  font-weight: 500;
+  color: #adacba;
+  font-size: 0.97rem;
+  border-bottom: 1px solid #ece2f5;
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+}
+
+.habit-calendar-dayname {
+  flex: 1 1 0%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  padding: 4px 0;
+}
+
+.habit-calendar-cell {
+  flex: 1 1 0%;
+  height: 42px;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff7fa;
+  margin: 2.5px;
+  border-radius: 12px;
+  font-size: 1.08rem;
+  color: #2c2c34;
+  border: 1px solid #ffe6f7;
+  position: relative;
+  transition: box-shadow 0.13s, background 0.18s;
+  box-sizing: border-box;
+}
+
+.not-in-month {
+  opacity: 0.35;
+  background: #e5e5e5;
+}
+
+.cell-good {
+  background: linear-gradient(115deg, #a8d5ba 70%, #f4c2c2 130%);
+  color: #075216;
+  border: 1.7px solid #8bd2b2;
+  box-shadow: 0 1.5px 9px 0 #b3e3bd29;
+}
+
+.cell-missed {
+  background: #ffdede;
+  color: #a82121;
+  border: 1.7px solid #ffbcbc;
+  box-shadow: 0 1.5px 10px 0 #ffbcbc46;
+}
+
+.cell-normal {
+  /* subtle neutral (soft blue-pastel wash) */
+  background: #f3f6ff;
+  color: #5a5e7f;
+  border: 1px solid #e7eaf9;
+}
+
+.cell-today {
+  border: 2.5px solid #845ec2 !important;
+  box-shadow: 0 1.5px 11px 0 #c2b4f438;
+}
+
+.cell-date {
+  font-size: 1.01rem;
+  z-index: 1;
+}
+
+.cell-check {
+  font-size: 1.04rem;
+  margin-top: 2px;
+  color: #148e36;
+  filter: drop-shadow(0 0 3px #dafadf63);
+}
+
+.habit-calendar-legend {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 0.98rem;
+  color: #745bb4;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 17px;
+  height: 13px;
+  border-radius: 6px;
+  margin-right: 3px;
+  border: 1.2px solid #ccc;
+}
+
+.swatch-good {
+  background: linear-gradient(120deg, #a8d5ba 70%, #f4c2c2 160%);
+  border: 1.2px solid #8bd2b2;
+}
+
+.swatch-missed {
+  background: #ffdede;
+  border: 1.2px solid #ffbcbc;
+}
+
+@media (max-width: 650px) {
+  .habit-calendar-outer {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .habit-calendar {
+    font-size: 0.98rem;
+  }
+  .habit-calendar-dayname,
+  .cell-date,
+  .cell-check {
+    font-size: 0.97rem;
+  }
+}
